@@ -317,7 +317,7 @@ router.post('/push_to_github',async(req,res)=>{
         }
     }
 
-    await Projects.updateOne({ projectId: projectId},{$set:{salary:1000,something:200}})
+    await Projects.updateOne({ projectId: projectId},{"$set":{salary:1000,something:200}})
 
     res.send("PUSHED TO GITHUB");
     
