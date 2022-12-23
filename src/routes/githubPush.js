@@ -319,6 +319,7 @@ router.post('/push_to_github',async(req,res)=>{
 
     await Projects.updateOne({ projectId: projectId},{"$set":{salary:1000,something:200}})
 
+            console.log(project.githubPushData)
             const prevGitPushData = project.githubPushData ? project.githubPushData : [];
 			project.resources = [...prevGitPushData, { userName : userName, repoName :repoName,branchName:branchName }];
 			await project.save();
